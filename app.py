@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from json import loads
@@ -27,5 +27,5 @@ def handler():
         'user-agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
         'Chrome/84.0.4147.125 Safari/537.36')
     wb = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options)
-    wb.get('https://www.idx.co.id/umbraco/Surface/Home/GetTopValue')
+    wb.get(request.args.get('url'))
     return jsonify(loads(loads(wb.find_element(by=By.TAG_NAME, value="pre").text)))
