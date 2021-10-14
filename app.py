@@ -26,6 +26,6 @@ def handler():
     options.add_argument(
         'user-agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
         'Chrome/84.0.4147.125 Safari/537.36')
-    wb = webdriver.Chrome(execution_path=CHROMEDRIVER_PATH, options=options)
+    wb = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options)
     wb.get('https://www.idx.co.id/umbraco/Surface/Home/GetTopValue')
     return jsonify(loads(loads(wb.find_element(by=By.TAG_NAME, value="pre").text)))
