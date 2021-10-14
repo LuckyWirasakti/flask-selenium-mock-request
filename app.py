@@ -2,11 +2,12 @@ from flask import Flask, jsonify
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from json import loads
+import os
 
 app = Flask(__name__)
 
-GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
-CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+GOOGLE_CHROME_PATH = os.environ.get('GOOGLE_CHROME_PATH')
+CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH')
 
 
 @app.route('/')
