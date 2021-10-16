@@ -1,0 +1,32 @@
+{
+    "name": "Flask Mock Request Selenium",
+    "description": "Membantu proses pengambilan data pada dengan mengubah simulasi permintaan sebagai perambaan browser umum untuk melewati penyaringan bot pada keamanan website tujuan.",
+    "repository": "https://github.com/LuckyWirasakti/flask-selenium-mock-request",
+    "logo": "https://image.pngaaa.com/282/619282-middle.png",
+    "keywords": [
+        "python",
+        "flask",
+        "selenium",
+        "heroku",
+        "chromedriver",
+        "chrome",
+        "scrapping"
+    ],
+    "buildpacks": [
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-chromedriver.git"
+        },
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-google-chrome.git"
+        },
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "env": {
+        "CHROMEDRIVER_PATH": {
+            "value": "/app/.apt/usr/bin/google_chrome"
+        }
+    },
+    "success_url": "/scrapper?url=https://www.idx.co.id/umbraco/Surface/Home/GetTopValue?resultCount=50"
+}
