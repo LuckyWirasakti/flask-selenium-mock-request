@@ -1,4 +1,7 @@
 # Flask Mock Request Selenium
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## Tujuan
 
 Membantu proses pengambilan data pada dengan mengubah simulasi permintaan sebagai perambaan browser umum untuk melewati penyaringan bot pada keamanan website tujuan.
